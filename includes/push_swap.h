@@ -6,14 +6,14 @@
 /*   By: mbriffau <mbriffau@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/09/30 00:46:44 by mbriffau          #+#    #+#             */
-/*   Updated: 2017/09/30 18:23:20 by mbriffau         ###   ########.fr       */
+/*   Updated: 2017/10/01 01:51:35 by mbriffau         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef PUSH_SWAP_H
 # define PUSH_SWAP_H
 
-# include "../ft_printf/includes/ft_printf.h"
+# include "../libftprintf/includes/ft_printf.h"
 
 
 typedef struct			s_push_swap
@@ -28,9 +28,15 @@ typedef struct			s_manager_lst
 {
 	t_ps				**alst;
 	t_ps				**blst;
-	size_t				size_a;
-	size_t				size_b;
+	int				size_a;
+	int				size_b;
 }						t_ml;
+
+int			check(t_ml **mlst);
+void		parsing_array(t_ml *mlst, int nac, char **av);
+
+t_ps		*ps_lstnew(int value);
+void		ps_lstadd(t_ml *mlst, t_ps *add);
 
 
 void		swap_a(t_ml **mlst);
