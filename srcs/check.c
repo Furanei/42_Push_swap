@@ -6,7 +6,7 @@
 /*   By: mbriffau <mbriffau@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/09/30 18:55:24 by mbriffau          #+#    #+#             */
-/*   Updated: 2017/10/02 04:00:51 by mbriffau         ###   ########.fr       */
+/*   Updated: 2017/10/03 01:40:10 by mbriffau         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,5 +54,6 @@ void	check(int *array, int size, t_ps *p)
 	int *rank;
 
 	rank = ranking(array, size);
-	get_com(array, size, &*p);
+	printest(rank, p);
+	get_com(rank, size, &*p);
 }
