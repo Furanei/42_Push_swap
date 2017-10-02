@@ -1,43 +1,40 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   parsing.c                                          :+:      :+:    :+:   */
+/*   printest.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mbriffau <mbriffau@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2017/09/30 19:25:33 by mbriffau          #+#    #+#             */
-/*   Updated: 2017/10/02 03:45:34 by mbriffau         ###   ########.fr       */
+/*   Created: 2017/10/02 03:34:29 by mbriffau          #+#    #+#             */
+/*   Updated: 2017/10/02 03:56:19 by mbriffau         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/push_swap.h"
 
-t_ps	*init_p(int ac)
+void	printest(int *array, t_ps *p)
 {
-	t_ps	*p;
+	int i;
 
-	if (!(p = (t_ps*)malloc(sizeof(t_ps))))
-		ft_error("error_malloc");
-	p->a = 0;
-	p->b = 0;
-	p->oa = 0;
-	p->ob = ((ac - 1) * 2) - 1;
-	p->size_a = ac - 1;
-	p->size_b = 0;
-	return (p);
-
-}
-
-int 	*parsing_array(int nac, char **av)
-{
-	int		*array;
-	
-	if (!(array = (int*)malloc(sizeof(int) * ((nac) * 2))))
-		return (0);
-	while (nac > 0)
+	i = 0;
+	ft_printf("{white}---PRINT---\n{green}Stack a{eoc} :\n");
+	while (i < p->size_a)
 	{
-		array[nac - 1] = ft_atoi(av[nac]);
-		nac --;
+		ft_printf("a->%d\n", array[p->oa + p->a]);
+		p->a++;
+		if (p->a >= p->size_a)
+			p->a = 0;
+		i++;
 	}
-	return (array);
+	i = 0;
+	ft_printf("{red}Stack b{eoc} :\n");
+	while (i < p->size_b)
+	{
+		ft_printf("b->%d\n", array[p->ob + p->b]);
+		p->b++;
+		if (p->b >= p->size_b)
+			p->b = 0;
+		i++;
+	}
+	ft_printf("{white}----END----{eoc}\n");
 }

@@ -6,7 +6,7 @@
 /*   By: mbriffau <mbriffau@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/09/30 00:46:44 by mbriffau          #+#    #+#             */
-/*   Updated: 2017/10/01 15:46:04 by mbriffau         ###   ########.fr       */
+/*   Updated: 2017/10/02 04:17:20 by mbriffau         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,38 +16,36 @@
 # include "../libftprintf/includes/ft_printf.h"
 
 
-// typedef struct			s_push_swap
-// {
-// 	int					value;
-// 	int					rank;
-// 	struct s_push_swap	*next;
-// 	struct s_push_swap	*prev;
-// }						t_ps;
+typedef struct		s_push_swap
+{
+	int		a;
+	int		b;
+	int		oa;
+	int		ob;
+	int		size_a;
+	int		size_b;
+}					t_ps;
 
-// typedef struct			s_manager_lst
-// {
-// 	int					
-// 	int					size_a;
-// 	int					size_b;
-// }						t_ml;
+void	printest(int *array, t_ps *p);//
 
-void	check(int *array, int n);
 int 	*parsing_array(int nac, char **av);
+t_ps	*init_p(int ac);
+void	check(int *array, int n, t_ps *p);
+void	get_com(int *array, int size, t_ps *p);
 
-// t_ps		*ps_lstnew(int value);
-// void		ps_lstadd(t_ml *mlst, t_ps *add);
+int		pa(int *array, t_ps *p);
+int		pb(int *array, t_ps *p);
 
+void	sa(int *array, t_ps *p);
+void	sb(int *array, t_ps *p);
+void	ss(int *array, t_ps *p);
 
-// void		swap_a(t_ml **mlst);
-// void		swap_b(t_ml **mlst);
-// void		swap_ss(t_ml **mlst);
-// int			push_a(t_ml **mlst);
-// int			push_b(t_ml **mlst);
-// void		rotate_a(t_ml **mlst);
-// void		rotate_b(t_ml **mlst);
-// void		rotate_rr(t_ml **mlst);
-// void		reverse_rotate_a(t_ml **mlst);
-// void		reverse_rotate_b(t_ml **mlst);
-// void		rotate_rrr(t_ml **mlst);
+void	ra(t_ps *p);
+void	rb(t_ps *p);
+void	rr(t_ps *p);
+
+void	rra(t_ps *p);
+void	rrb(t_ps *p);
+void	rrr(t_ps *p);
 
 #endif

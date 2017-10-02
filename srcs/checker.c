@@ -6,7 +6,7 @@
 /*   By: mbriffau <mbriffau@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/09/29 13:59:07 by mbriffau          #+#    #+#             */
-/*   Updated: 2017/10/01 15:14:00 by mbriffau         ###   ########.fr       */
+/*   Updated: 2017/10/02 04:10:21 by mbriffau         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,17 +36,18 @@ static int		is_number(char *s)
 int		main(int ac, char **av)
 {
 	int		n;
-	int	*array;
+	int		*array;
+	t_ps	*p;
+
 
 	n = 1;
 	if (ac < 2)
 		return (0);
 	while (n < ac)
 		is_number(av[n++]);
-	array = &*parsing_array((ac), av);
-	n = 0;
-	while (n < (ac - 1))
-		ft_printf("%d\n", array[n++]);
-	check(array, ac - 1);
+	array = &*parsing_array((ac - 1), av);
+	p = init_p(ac);
+	printest(array, p);
+	check(array, ac - 1, &*p);
 	return (1);
 }

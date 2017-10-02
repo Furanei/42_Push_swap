@@ -6,7 +6,7 @@
 #    By: mbriffau <mbriffau@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2017/09/30 18:29:49 by mbriffau          #+#    #+#              #
-#    Updated: 2017/10/01 00:20:54 by mbriffau         ###   ########.fr        #
+#    Updated: 2017/10/02 04:09:26 by mbriffau         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -34,7 +34,8 @@ SRC = \
 		push.c \
 		rotate.c \
 		reverse_rotate.c \
-		pslst_manager.c
+		order.c \
+		printest.c
 
 OBJ =		$(SRC:.c=.o)
 

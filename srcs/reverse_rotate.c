@@ -6,24 +6,34 @@
 /*   By: mbriffau <mbriffau@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/09/30 15:04:02 by mbriffau          #+#    #+#             */
-/*   Updated: 2017/10/01 14:27:48 by mbriffau         ###   ########.fr       */
+/*   Updated: 2017/10/02 03:05:07 by mbriffau         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/push_swap.h"
 
-// void	reverse_rotate_a(t_ml **mlst)
-// {
-// 	*(*mlst)->alst = (*(*mlst)->alst)->prev;
-// }
+void	rra(t_ps *p)
+{
+	if (p->size_a > 0)
+	{
+		p->a--;
+		if (p->a < p->oa)
+			p->a = (p->size_a - 1);
+	}
+}
 
-// void	reverse_rotate_b(t_ml **mlst)
-// {
-// 	*(*mlst)->blst = (*(*mlst)->blst)->prev;
-// }
+void	rrb(t_ps *p)
+{
+	if (p->size_b > 0)
+	{
+		p->b--;
+		if (p->b < p->ob)
+			p->b = (p->size_b - 1);
+	}
+}
 
-// void	rotate_rrr(t_ml **mlst)
-// {
-// 	reverse_rotate_a(&*mlst);
-// 	reverse_rotate_b(&*mlst);
-// }
+void	rrr(t_ps *p)
+{
+	rra(&*p);
+	rrb(&*p);
+}

@@ -6,24 +6,34 @@
 /*   By: mbriffau <mbriffau@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/09/30 15:03:22 by mbriffau          #+#    #+#             */
-/*   Updated: 2017/10/01 14:27:51 by mbriffau         ###   ########.fr       */
+/*   Updated: 2017/10/02 03:05:11 by mbriffau         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/push_swap.h"
 
-// void	rotate_a(t_ml **mlst)
-// {
-// 	*(*mlst)->alst = (*(*mlst)->alst)->next;
-// }
+void	ra(t_ps *p)
+{
+	if (p->size_a > 0)
+	{
+		p->a++;
+		if (p->a >= p->size_a)
+			p->a = p->oa;
+	}
+}
 
-// void	rotate_b(t_ml **mlst)
-// {
-// 	*(*mlst)->blst = (*(*mlst)->blst)->next;
-// }
+void	rb(t_ps *p)
+{
+	if (p->size_b > 0)
+	{
+		p->b++;
+		if (p->b >= p->size_b)
+			p->b = p->ob;
+	}
+}
 
-// void	rotate_rr(t_ml **mlst)
-// {
-// 	rotate_a(&*mlst);
-// 	rotate_b(&*mlst);
-// }
+void	rr(t_ps *p)
+{
+	ra(&*p);
+	rb(&*p);
+}

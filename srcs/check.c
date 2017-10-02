@@ -6,7 +6,7 @@
 /*   By: mbriffau <mbriffau@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/09/30 18:55:24 by mbriffau          #+#    #+#             */
-/*   Updated: 2017/10/01 15:43:54 by mbriffau         ###   ########.fr       */
+/*   Updated: 2017/10/02 04:00:51 by mbriffau         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,39 +49,10 @@ static int		*ranking(int *array, int size)
 	return (rank);
 }
 
-static int		is_sorted(int *array, int size)
-{
-	int i;
-
-	i = 1;
-	while (i < size)
-	{
-		if (array[i - 1] > array[i])
-			return (0);
-		i++;
-	}
-	return (1);
-}
-
-static void	get_com(int *array, int size)
-{
-	char	*str;
-	
-	array[size] =0;///
-	while (get_next_line(0, &str) == 1)
-	{
-		ft_printf("%s\n", str);
-	}
-}
-
-void	check(int *array, int size)
+void	check(int *array, int size, t_ps *p)
 {
 	int *rank;
 
 	rank = ranking(array, size);
-	int i = 0;
-	while (i < size)
-		ft_printf("rank %d\n", rank[i++]);
-	ft_printf("sort? %d\n", is_sorted(array, size));
-	get_com(array, size);
+	get_com(array, size, &*p);
 }
